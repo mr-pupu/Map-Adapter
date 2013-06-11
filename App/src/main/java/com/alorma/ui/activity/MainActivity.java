@@ -7,9 +7,11 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.SimpleCursorAdapter;
-import com.alorma.configure.AsyncPoints;
+import com.alorma.AsyncPoints;
 import com.alorma.data.bbdd.contract.LocationContract;
+import com.alorma.maps.adapter.Banana;
 import com.alorma.utils.LoaderId;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 
 public class MainActivity extends ListActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 

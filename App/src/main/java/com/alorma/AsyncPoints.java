@@ -1,4 +1,4 @@
-package com.alorma.configure;
+package com.alorma;
 
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -8,8 +8,10 @@ import android.util.Log;
 import com.alorma.data.bbdd.contract.LocationContract;
 import com.alorma.data.bbdd.cursor.LocationCursor;
 import com.alorma.data.bean.Location;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -20,12 +22,13 @@ public class AsyncPoints extends AsyncTask<Void, Void, Void> {
 
     private final int number;
     private Context context;
+    private HashMap<LatLng, String> hashPoints;
 
     public AsyncPoints(Context context, int number) {
         this.context = context;
         this.number = number;
+        hashPoints = new HashMap<LatLng, String>();
     }
-
 
     @Override
     protected Void doInBackground(Void... voids) {
@@ -34,7 +37,12 @@ public class AsyncPoints extends AsyncTask<Void, Void, Void> {
 
         List<Location> locations = new ArrayList<Location>();
 
-        for (int i = 0; i < number; i++) {
+        int i = 0;
+
+        ContentResolver cr = context.getContentResolver();
+
+        do {
+
             Location loc = new Location();
             loc.setName("Point: " + i);
 
@@ -44,16 +52,23 @@ public class AsyncPoints extends AsyncTask<Void, Void, Void> {
             loc.setLat(lat);
             loc.setLng(lng);
 
+            LatLng ll = new LatLng(lat, lng);
+
+            if (!hashPoints.containsKey(lat)) {
+                hashPoints.put(ll, loc.getName());
+            }
+
             locations.add(loc);
-        }
 
-        ContentValues[] values = locationCursor.write(locations);
+            cr.insert(LocationContract.URI, locationCursor.write(loc));
 
-        ContentResolver cr = context.getContentResolver();
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
 
-        cr.bulkInsert(LocationContract.URI, values);
+            }
 
-        Log.i("TAG", "Fet");
+        } while (i++ < number);
 
         return null;
     }
