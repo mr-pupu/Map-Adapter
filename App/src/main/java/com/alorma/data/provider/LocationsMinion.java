@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import com.alorma.data.bbdd.contract.LocationContract;
 import com.alorma.data.provider.base.MinionContentProvider;
 
 /**
@@ -48,7 +49,7 @@ public class LocationsMinion implements MinionContentProvider {
      */
     @Override
     public Cursor query(SQLiteDatabase db, Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-        return null;
+        return db.query(LocationContract.TABLE, projection, selection, selectionArgs, null, null, sortOrder);
     }
 
     /**
@@ -56,12 +57,12 @@ public class LocationsMinion implements MinionContentProvider {
      *
      * @param db            the current db
      * @param uri           The content:// URI of the insertion request.
-     * @param contentValues A set of column_name/value pairs to add to the database.
+     * @param values A set of column_name/value pairs to add to the database.
      * @return The URI for the newly inserted item.
      */
     @Override
     public long insert(SQLiteDatabase db, Uri uri, ContentValues values) {
-        return 0;
+        return db.insert(LocationContract.TABLE, null, values);
     }
 
     /**
@@ -76,7 +77,7 @@ public class LocationsMinion implements MinionContentProvider {
      */
     @Override
     public int delete(SQLiteDatabase db, Uri uri, String where, String[] selectionArgs) {
-        return 0;
+        return db.delete(LocationContract.TABLE, where, selectionArgs);
     }
 
     /**
@@ -91,7 +92,7 @@ public class LocationsMinion implements MinionContentProvider {
      */
     @Override
     public int update(SQLiteDatabase db, Uri uri, ContentValues values, String where, String[] selectionArgs) {
-        return 0;
+        return db.update(LocationContract.TABLE, values, where, selectionArgs);
     }
 
     @Override
