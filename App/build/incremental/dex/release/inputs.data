@@ -1,0 +1,17 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1370983798000 1042 ca5fa7c984514af17f2bf806e7a12acf13aab13b /home/alorma/android/workspaces/LibProject/App/build/exploded-bundles/Lib.aar/classes.jar
+1370983584000 437 6773e6cfd613068aef197b5d86875ad0b78469cf /home/alorma/android/workspaces/LibProject/App/build/classes/release/com/alorma/R$dimen.class
+1370983584000 379 c23022307232b1e99f7461846b660ba0101df404 /home/alorma/android/workspaces/LibProject/App/build/classes/release/com/alorma/R$layout.class
+1370983584000 364 e5ef6fe0523d2858f55d14a9ab592bd6656b3e8e /home/alorma/android/workspaces/LibProject/App/build/classes/release/com/alorma/R$menu.class
+1370983800000 608 9e4d09f234b58ad8172a8d068bcc2e1646c4f8fc /home/alorma/android/workspaces/LibProject/App/build/classes/release/com/alorma/MainActivity.class
+1370983584000 448 40d08472f4f7a4d1798c3e7de2daff1c0f577adf /home/alorma/android/workspaces/LibProject/App/build/classes/release/com/alorma/R$string.class
+1370983584000 407 0a00a0f3e9ae33c36cab289e619d7bf3ff3e0187 /home/alorma/android/workspaces/LibProject/App/build/classes/release/com/alorma/R$style.class
+1370983584000 383 7bfb4422a5498b9aed6e7aa756808a92bcf19544 /home/alorma/android/workspaces/LibProject/App/build/classes/release/com/alorma/R$drawable.class
+1370983529000 484258 bd6479f5dd592790607e0504e66e0f31c2b4d308 /home/alorma/android/workspaces/LibProject/App/libs/android-support-v4.jar
+1370983584000 316 b3e80ab5848da23f13487b434a9e6a1afccb45c6 /home/alorma/android/workspaces/LibProject/App/build/classes/release/com/alorma/R$attr.class
+1370983584000 597 70e7bf62082a18cb8314fe50efd64d6b7308f031 /home/alorma/android/workspaces/LibProject/App/build/classes/release/com/alorma/R.class
+1370983584000 369 56bc1413d4a45a3aae25706728dde58d0f439e87 /home/alorma/android/workspaces/LibProject/App/build/classes/release/com/alorma/R$id.class
+1370983584000 329 9858372122b7792becce45173fd12a02a1d66f0d /home/alorma/android/workspaces/LibProject/App/build/classes/release/com/alorma/BuildConfig.class
+1370983639000 484258 bd6479f5dd592790607e0504e66e0f31c2b4d308 /home/alorma/android/workspaces/LibProject/App/build/exploded-bundles/Lib.aar/libs/android-support-v4.jar
