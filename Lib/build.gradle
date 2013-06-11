@@ -10,6 +10,7 @@ apply plugin: 'android-library'
 
 dependencies {
     compile files('libs/android-support-v4.jar')
+    compile files('libs/google-play-services.jar')
 }
 
 android {
