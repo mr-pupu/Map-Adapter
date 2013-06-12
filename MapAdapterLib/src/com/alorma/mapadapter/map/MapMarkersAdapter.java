@@ -17,11 +17,23 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.VisibleRegion;
 
 /**
- * Created with IntelliJ IDEA.
- * User: A557114
- * Date: 12/06/13
- * Time: 15:49
- * To change this template use File | Settings | File Templates.
+ * This file is part of Map Adapter Library.
+ * <p/>
+ * Map Adapter Library is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * <p/>
+ * Map Adapter Library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * <p/>
+ * You should have received a copy of the GNU General Public License
+ * along with Map Adapter Library.  If not, see <http://www.gnu.org/licenses/>.
+ * <p/>
+ *
+ * Created by alorma on 11/06/13.
  */
 public class MapMarkersAdapter implements LoaderManager.LoaderCallbacks<Cursor>, GoogleMap.OnCameraChangeListener {
 
