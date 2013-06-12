@@ -25,28 +25,9 @@ import com.google.android.gms.maps.model.VisibleRegion;
  */
 public class MapMarkersAdapter implements LoaderManager.LoaderCallbacks<Cursor>, GoogleMap.OnCameraChangeListener {
 
-    public String getLatField() {
-        return latField;
-    }
-
-    public void setLatField(String latField) {
-        this.latField = latField;
-    }
-
-    public String getLngField() {
-        return lngField;
-    }
-
-    public void setLngField(String lngField) {
-        this.lngField = lngField;
-    }
-
+    private String whereClause;
     private String latField;
     private String lngField;
-
-    public void setMap(GoogleMap map) {
-        this.map = map;
-    }
 
     private GoogleMap map;
     private int loaderId;
@@ -56,14 +37,6 @@ public class MapMarkersAdapter implements LoaderManager.LoaderCallbacks<Cursor>,
 
     public MapMarkersAdapter() {
 
-    }
-
-    public MapMarkersAdapter(Activity context, GoogleMap map, Uri uri, String lat, String lng) {
-        this.context = context;
-        this.map = map;
-        this.uri = uri;
-        this.latField = lat;
-        this.lngField = lng;
     }
 
     public void start() throws NullPointerException {
@@ -82,30 +55,6 @@ public class MapMarkersAdapter implements LoaderManager.LoaderCallbacks<Cursor>,
         loaderId = LoaderId.getId();
 
         context.getLoaderManager().initLoader(loaderId, null, this);
-    }
-
-    public GoogleMap getMap() {
-        return map;
-    }
-
-    public int getLoaderId() {
-        return loaderId;
-    }
-
-    public Activity getContext() {
-        return context;
-    }
-
-    public void setContext(Activity context) {
-        this.context = context;
-    }
-
-    public Uri getUri() {
-        return uri;
-    }
-
-    public void setUri(Uri uri) {
-        this.uri = uri;
     }
 
 
@@ -129,10 +78,13 @@ public class MapMarkersAdapter implements LoaderManager.LoaderCallbacks<Cursor>,
             buf.append(lngField + "<" + ne.longitude);
             buf.append(" AND ");
             buf.append(lngField + ">" + sw.longitude);
+            buf.append(" AND ");
+            buf.append(getWhereClause());
 
         }
         return buf.toString();
     }
+
 
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
@@ -173,4 +125,59 @@ public class MapMarkersAdapter implements LoaderManager.LoaderCallbacks<Cursor>,
         this.visibleRegion = map.getProjection().getVisibleRegion();
         context.getLoaderManager().restartLoader(loaderId, null, this);
     }
+
+    public GoogleMap getMap() {
+        return map;
+    }
+
+    public int getLoaderId() {
+        return loaderId;
+    }
+
+    public Activity getContext() {
+        return context;
+    }
+
+    public void setContext(Activity context) {
+        this.context = context;
+    }
+
+    public Uri getUri() {
+        return uri;
+    }
+
+    public void setUri(Uri uri) {
+        this.uri = uri;
+    }
+
+
+    private String getWhereClause() {
+        return whereClause;
+    }
+
+
+    public void setMap(GoogleMap map) {
+        this.map = map;
+    }
+
+    public void setWhereClause(String whereClause) {
+        this.whereClause = whereClause;
+    }
+
+    public String getLatField() {
+        return latField;
+    }
+
+    public void setLatField(String latField) {
+        this.latField = latField;
+    }
+
+    public String getLngField() {
+        return lngField;
+    }
+
+    public void setLngField(String lngField) {
+        this.lngField = lngField;
+    }
+
 }
