@@ -1,9 +1,9 @@
-package com.t21.devel.MapAdapter.data.bbdd;
+package com.alorma.mapadapter.data.bbdd;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import com.t21.devel.MapAdapter.data.bbdd.contract.LocationContract;
+import com.alorma.mapadapter.data.bbdd.contract.LocationContract;
 
 public class DbHelper extends SQLiteOpenHelper {
 

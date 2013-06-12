@@ -2,26 +2,23 @@ package com.t21.devel.MapAdapter.ui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.t21.devel.MapAdapter.R;
-import com.t21.devel.MapAdapter.data.bbdd.contract.LocationContract;
-import com.t21.devel.MapAdapter.map.MapMarkersAdapter;
 
 public class MainActivity extends Activity {
 
-    private GoogleMap map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
 
-        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+        int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
 
-        if (map != null) {
-            String[] locationFields = {LocationContract.lat, LocationContract.lng};
-            new MapMarkersAdapter(this, map, LocationContract.URI, locationFields);
+        if (status != ConnectionResult.SUCCESS) {
+            GooglePlayServicesUtil.getErrorDialog(status, this, 1234).show();
+        } else {
+            setContentView(R.layout.main);
         }
     }
 

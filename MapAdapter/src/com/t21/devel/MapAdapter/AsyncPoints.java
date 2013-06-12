@@ -3,10 +3,10 @@ package com.t21.devel.MapAdapter;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.os.AsyncTask;
+import com.alorma.mapadapter.data.bbdd.contract.LocationContract;
+import com.alorma.mapadapter.data.bbdd.cursor.LocationCursor;
+import com.alorma.mapadapter.data.bean.Location;
 import com.google.android.gms.maps.model.LatLng;
-import com.t21.devel.MapAdapter.data.bbdd.contract.LocationContract;
-import com.t21.devel.MapAdapter.data.bbdd.cursor.LocationCursor;
-import com.t21.devel.MapAdapter.data.bean.Location;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,7 +58,7 @@ public class AsyncPoints extends AsyncTask<Void, Void, Void> {
 
             locations.add(loc);
 
-            cr.insert(LocationContract.URI, locationCursor.write(loc));
+
 
             try {
                 Thread.sleep(1);
@@ -67,6 +67,8 @@ public class AsyncPoints extends AsyncTask<Void, Void, Void> {
             }
 
         } while (i++ < number);
+
+        cr.bulkInsert(LocationContract.URI, locationCursor.write(locations));
 
         return null;
     }

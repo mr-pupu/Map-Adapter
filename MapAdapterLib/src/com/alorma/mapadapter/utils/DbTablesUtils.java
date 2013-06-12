@@ -1,4 +1,4 @@
-package com.t21.devel.MapAdapter.utils;
+package com.alorma.mapadapter.utils;
 
 import android.provider.BaseColumns;
 

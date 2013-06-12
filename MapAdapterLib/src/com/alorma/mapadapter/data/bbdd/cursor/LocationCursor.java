@@ -1,10 +1,10 @@
-package com.t21.devel.MapAdapter.data.bbdd.cursor;
+package com.alorma.mapadapter.data.bbdd.cursor;
 
 import android.content.ContentValues;
 import android.database.Cursor;
-import com.t21.devel.MapAdapter.data.bbdd.contract.LocationContract;
-import com.t21.devel.MapAdapter.data.bean.Location;
-import com.t21.devel.MapAdapter.utils.CursorUtils;
+import com.alorma.mapadapter.data.bbdd.contract.LocationContract;
+import com.alorma.mapadapter.data.bean.Location;
+import com.alorma.mapadapter.utils.CursorUtils;
 
 /**
  * Created by alorma on 25/05/13.

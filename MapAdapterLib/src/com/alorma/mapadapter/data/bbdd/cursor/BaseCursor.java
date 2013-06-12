@@ -1,4 +1,4 @@
-package com.t21.devel.MapAdapter.data.bbdd.cursor;
+package com.alorma.mapadapter.data.bbdd.cursor;
 
 import android.content.ContentValues;
 import android.database.Cursor;

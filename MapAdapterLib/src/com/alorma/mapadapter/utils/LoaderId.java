@@ -1,4 +1,4 @@
-package com.t21.devel.MapAdapter.utils;
+package com.alorma.mapadapter.utils;
 
 /**
  * Created by alorma on 18/05/13.

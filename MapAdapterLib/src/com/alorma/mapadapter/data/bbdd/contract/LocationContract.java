@@ -1,9 +1,8 @@
-package com.t21.devel.MapAdapter.data.bbdd.contract;
+package com.alorma.mapadapter.data.bbdd.contract;
 
 import android.net.Uri;
-import com.t21.devel.MapAdapter.data.provider.AppProvider;
-import com.t21.devel.MapAdapter.data.provider.LocationsMinion;
-import com.t21.devel.MapAdapter.utils.DbTablesUtils;
+import com.alorma.mapadapter.data.provider.LocationsMinion;
+import com.alorma.mapadapter.utils.DbTablesUtils;
 
 /**
  * Created by alorma on 25/05/13.
@@ -11,7 +10,8 @@ import com.t21.devel.MapAdapter.utils.DbTablesUtils;
 public class LocationContract implements BaseContract {
 
     public static final String TABLE = "location";
-    public static final Uri URI = Uri.parse("content://" + AppProvider.AUTHORITY + "/" + LocationsMinion.PATH);
+    public static final Uri URI = Uri.parse("content://" + LocationsMinion.AUTHORITY + "/" + LocationsMinion.PATH);
+    public static final Uri ITEM_URI = Uri.parse("content://" + LocationsMinion.PATH + "/#");
 
     public static final String name = "name";
     public static final String lat = "lat";

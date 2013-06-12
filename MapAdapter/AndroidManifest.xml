@@ -39,7 +39,7 @@
                 android:value="AIzaSyD1Ki1s40K_dYVNGkcLdhU57bynxJFfMoo"/>
 
 
-        <provider android:name="com.t21.devel.MapAdapter.data.provider.AppProvider"
-                  android:authorities="com.t21.devel.MapAdapter.data.provider.AppProvider"/>
+        <provider android:name="com.alorma.mapadapter.data.provider.LocationsMinion"
+                  android:authorities="com.alorma.mapadapter.provider"/>
     </application>
 </manifest>

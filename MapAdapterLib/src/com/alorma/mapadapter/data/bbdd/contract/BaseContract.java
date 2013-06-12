@@ -1,4 +1,4 @@
-package com.t21.devel.MapAdapter.data.bbdd.contract;
+package com.alorma.mapadapter.data.bbdd.contract;
 
 import android.provider.BaseColumns;
 

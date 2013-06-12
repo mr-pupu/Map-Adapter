@@ -1,4 +1,4 @@
-package com.t21.devel.MapAdapter.data.bean;
+package com.alorma.mapadapter.data.bean;
 
 /**
  * Created by alorma on 11/06/13.
