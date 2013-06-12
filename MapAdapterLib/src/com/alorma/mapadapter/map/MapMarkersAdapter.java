@@ -78,8 +78,10 @@ public class MapMarkersAdapter implements LoaderManager.LoaderCallbacks<Cursor>,
             buf.append(lngField + "<" + ne.longitude);
             buf.append(" AND ");
             buf.append(lngField + ">" + sw.longitude);
-            buf.append(" AND ");
-            buf.append(getWhereClause());
+            if (getWhereClause() != null && !getWhereClause().equals("")) {
+                buf.append(" AND ");
+                buf.append(getWhereClause());
+            }
 
         }
         return buf.toString();
