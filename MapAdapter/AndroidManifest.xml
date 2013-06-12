@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.t21.devel.MapAdapter"
+          package="com.alorma.mapdemo"
           android:versionCode="1"
           android:versionName="1.0">
 
@@ -27,7 +27,7 @@
     <uses-sdk android:minSdkVersion="14"/>
     <application android:label="@string/app_name"
                  android:icon="@drawable/ic_launcher">
-        <activity android:name=".ui.activity.MainActivity"
+        <activity android:name="com.alorma.mapdemo.ui.activity.MainActivity"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

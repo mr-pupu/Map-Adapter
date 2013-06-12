@@ -1,4 +1,4 @@
-package com.t21.devel.MapAdapter.ui.fragment;
+package com.alorma.mapdemo.ui.fragment;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import com.alorma.mapadapter.data.bean.Location;
 import com.alorma.mapadapter.ui.fragment.AbsMapedFragment;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 /**
  * Created by alorma on 12/06/13.
@@ -42,6 +43,8 @@ public class MapedFragment extends AbsMapedFragment implements GoogleMap.OnMapCl
         Location loc = new Location();
         loc.setLat(latLng.latitude);
         loc.setLng(latLng.longitude);
+
+        getMap().addMarker(new MarkerOptions().position(latLng));
 
         getActivity().getContentResolver().insert(LocationContract.URI, new LocationCursor().write(loc));
     }

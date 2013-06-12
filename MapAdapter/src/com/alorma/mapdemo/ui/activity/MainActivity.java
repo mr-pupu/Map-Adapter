@@ -1,10 +1,10 @@
-package com.t21.devel.MapAdapter.ui.activity;
+package com.alorma.mapdemo.ui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import com.alorma.mapdemo.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.t21.devel.MapAdapter.R;
 
 public class MainActivity extends Activity {
 

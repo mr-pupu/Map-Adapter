@@ -1,4 +1,4 @@
-package com.t21.devel.MapAdapter;
+package com.alorma.mapdemo.ui.fragment;
 
 import android.content.ContentResolver;
 import android.content.Context;
